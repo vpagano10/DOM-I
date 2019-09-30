@@ -39,4 +39,51 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+const links = document.getElementsByTagName('a');
+Array.from(links).forEach(link => {
+  links[0].textContent = "Services";
+  links[1].textContent = "Product";
+  links[2].textContent = "Vision";
+  links[3].textContent = "Features";
+  links[4].textContent = "About";
+  links[5].textContent = "Contact";
+  link.style.color = "green";
+});
+
+// const homeLink = document.createElement("a");
+// document.nav.appendChild(homeLink);
+
+
+const bigImage = document.getElementById("cta-img");
+bigImage.src = siteContent["cta"]["img-src"];
+
+const mainTitle = document.querySelector("h1");
+mainTitle.textContent = siteContent["cta"]["h1"];
+
+const mainButton = document.querySelector("button");
+mainButton.textContent = siteContent["cta"]["button"];
+
+const middleImage = document.getElementById("middle-img");
+middleImage.src = siteContent["main-content"]["middle-img-src"];
+
+const sectionTitles = document.querySelectorAll("h4");
+sectionTitles[0].textContent = siteContent["main-content"]["features-h4"];
+sectionTitles[1].textContent = siteContent["main-content"]["about-h4"];
+sectionTitles[2].textContent = siteContent["main-content"]["services-h4"];
+sectionTitles[3].textContent = siteContent["main-content"]["product-h4"];
+sectionTitles[4].textContent = siteContent["main-content"]["vision-h4"];
+sectionTitles[5].textContent = siteContent["contact"]["contact-h4"];
+
+const pContent = document.querySelectorAll("p");
+pContent[0].textContent = siteContent["main-content"]["features-content"];
+pContent[1].textContent = siteContent["main-content"]["about-content"];
+pContent[2].textContent = siteContent["main-content"]["services-content"];
+pContent[3].textContent = siteContent["main-content"]["product-content"];
+pContent[4].textContent = siteContent["main-content"]["vision-content"];
+pContent[5].textContent = siteContent["contact"]["address"];
+pContent[6].textContent = siteContent["contact"]["phone"];
+pContent[7].textContent = siteContent["contact"]["email"];
+pContent[8].textContent = siteContent["footer"]["copyright"];
