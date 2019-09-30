@@ -68,7 +68,7 @@ home.style.fontWeight = "bold";
 const blog = document.createElement('a');
 blog.textContent = "Blog";
 const parentTwo = document.querySelector("nav")
-parentTwo.append(blog);
+parentTwo.appendChild(blog);
 
 blog.style.color = "blue";
 blog.style.fontSize = "1.4rem";
