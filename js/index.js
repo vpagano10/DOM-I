@@ -123,7 +123,7 @@ pContent.forEach(els => {
 // idea: when button is clicked, it changes the colors of the paragraph content.
 
 const colorButton = document.createElement('button');
-colorButton.textContent = "Colors!!";
+colorButton.textContent = "More colors!!";
 const buttonParent = document.querySelector("footer")
 buttonParent.append(colorButton);
 
@@ -135,3 +135,18 @@ colorButton.style.marginTop = "2%";
 colorButton.style.backgroundColor = "coral";
 colorButton.style.borderRadius = "5px";
 colorButton.style.border = "1px solid black";
+
+colorButton.addEventListener('mouseover', (event) => {
+  event.target.textContent = " Warning: Don't do it !!";
+  event.target.style.color = "yellow";
+  event.target.style.backgroundColor = "darkblue";
+})
+
+colorButton.addEventListener('click', (event) => {
+  event.target.style.backgroundColor = "black";
+  event.target.textContent = "You still clicked it :( "
+})
+
+colorButton.addEventListener('click', (event) => {
+  alert('Sorry! The colors button is not working yet');
+})
