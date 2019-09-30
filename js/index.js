@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM\nIs\nAwesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street\nSomewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -51,10 +51,28 @@ Array.from(links).forEach(link => {
   links[4].textContent = "About";
   links[5].textContent = "Contact";
   link.style.color = "green";
+  link.style.fontWeight = "bold";
+  link.style.fontSize = "1.4rem";
 });
 
-// const homeLink = document.createElement("a");
-// document.nav.appendChild(homeLink);
+const home = document.createElement('a');
+home.textContent = "Home";
+const parent = document.querySelector("nav")
+parent.prepend(home);
+
+home.style.color = "blue";
+home.style.fontSize = "1.4rem";
+home.style.fontWeight = "bold";
+
+
+const blog = document.createElement('a');
+blog.textContent = "Blog";
+const parentTwo = document.querySelector("nav")
+parentTwo.append(blog);
+
+blog.style.color = "blue";
+blog.style.fontSize = "1.4rem";
+blog.style.fontWeight = "bold";
 
 
 const bigImage = document.getElementById("cta-img");
@@ -62,6 +80,8 @@ bigImage.src = siteContent["cta"]["img-src"];
 
 const mainTitle = document.querySelector("h1");
 mainTitle.textContent = siteContent["cta"]["h1"];
+
+mainTitle.style.whiteSpace = "pre";
 
 const mainButton = document.querySelector("button");
 mainButton.textContent = siteContent["cta"]["button"];
@@ -77,6 +97,12 @@ sectionTitles[3].textContent = siteContent["main-content"]["product-h4"];
 sectionTitles[4].textContent = siteContent["main-content"]["vision-h4"];
 sectionTitles[5].textContent = siteContent["contact"]["contact-h4"];
 
+sectionTitles.forEach(element => {
+  element.style.color = "orange";
+  element.style.fontWeight = "bold";
+  element.style.fontSize = "1.6rem";
+})
+
 const pContent = document.querySelectorAll("p");
 pContent[0].textContent = siteContent["main-content"]["features-content"];
 pContent[1].textContent = siteContent["main-content"]["about-content"];
@@ -84,6 +110,28 @@ pContent[2].textContent = siteContent["main-content"]["services-content"];
 pContent[3].textContent = siteContent["main-content"]["product-content"];
 pContent[4].textContent = siteContent["main-content"]["vision-content"];
 pContent[5].textContent = siteContent["contact"]["address"];
+pContent[5].style.whiteSpace = "pre";
 pContent[6].textContent = siteContent["contact"]["phone"];
 pContent[7].textContent = siteContent["contact"]["email"];
 pContent[8].textContent = siteContent["footer"]["copyright"];
+
+pContent.forEach(els => {
+  els.style.fontSize = "1.2rem";
+})
+
+// try to make a button that when clicked changes the website
+// idea: when button is clicked, it changes the colors of the paragraph content.
+
+const colorButton = document.createElement('button');
+colorButton.textContent = "Colors!!";
+const buttonParent = document.querySelector("footer")
+buttonParent.append(colorButton);
+
+colorButton.style.color = "darkorchid";
+colorButton.style.fontSize = "1.4rem";
+colorButton.style.fontWeight = "bold";
+colorButton.style.padding = "1.5%";
+colorButton.style.marginTop = "2%";
+colorButton.style.backgroundColor = "coral";
+colorButton.style.borderRadius = "5px";
+colorButton.style.border = "1px solid black";
