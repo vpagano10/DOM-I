@@ -123,7 +123,7 @@ pContent.forEach(els => {
 // idea: when button is clicked, it changes the colors of the paragraph content.
 
 const colorButton = document.createElement('button');
-colorButton.textContent = "More colors!!";
+colorButton.textContent = "Dark Mode";
 const buttonParent = document.querySelector("footer")
 buttonParent.append(colorButton);
 
@@ -136,17 +136,46 @@ colorButton.style.backgroundColor = "coral";
 colorButton.style.borderRadius = "5px";
 colorButton.style.border = "1px solid black";
 
-colorButton.addEventListener('mouseover', (event) => {
-  event.target.textContent = " Warning: Don't do it !!";
-  event.target.style.color = "yellow";
-  event.target.style.backgroundColor = "darkblue";
-})
+// colorButton.addEventListener('mouseover', (event) => {
+//   event.target.textContent = " Warning: Don't do it !!";
+//   event.target.style.color = "yellow";
+//   event.target.style.backgroundColor = "darkblue";
+// })
 
-colorButton.addEventListener('click', (event) => {
-  event.target.style.backgroundColor = "black";
-  event.target.textContent = "You still clicked it :( "
-})
+// colorButton.addEventListener('click', (event) => {
+//   event.target.style.backgroundColor = "black";
+//   event.target.textContent = "You still clicked it :( "
+// })
 
-colorButton.addEventListener('click', (event) => {
-  alert('Sorry! The colors button is not working yet');
-})
+colorButton.addEventListener('click', buttonClick);
+function buttonClick(e) {
+  document.querySelector("body").style.backgroundColor = "black";
+  document.querySelector("body").style.color = "skyblue";
+}
+
+// colorButton.addEventListener('click', (event) => {
+//   alert('Sorry! The colors button is not working yet');
+// })
+
+
+const resetButton = document.createElement('button');
+resetButton.textContent = "Regular View";
+const buttonParentTwo = document.querySelector("footer")
+buttonParentTwo.appendChild(resetButton);
+
+resetButton.style.color = "darkorchid";
+resetButton.style.fontSize = "1.4rem";
+resetButton.style.fontWeight = "bold";
+resetButton.style.padding = "1.5%";
+resetButton.style.marginTop = "2%";
+resetButton.style.backgroundColor = "coral";
+resetButton.style.borderRadius = "5px";
+resetButton.style.border = "1px solid black";
+
+resetButton.addEventListener('click', buttonClickTwo);
+function buttonClickTwo(e) {
+  document.querySelector("body").style.backgroundColor = "white";
+  document.querySelector("body").style.color = "black";
+}
+
+// event bubbling
